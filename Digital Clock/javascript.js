@@ -1,25 +1,26 @@
-const dateEl = document.getElementById("date")
-const monthEl = document.getElementById("month")
-const yearEl = document.getElementById("year")
-const hoursEl = document.getElementById("hours")
-const minutesEl = document.getElementById("minutes")
-const secondsEl = document.getElementById("seconds")
-const millisecondsEl = document.getElementById("milliseconds")
-const ampmEl = document.getElementById("ampm")
+const dateEl = document.getElementById("date");
+const monthEl = document.getElementById("month");
+const yearEl = document.getElementById("year");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const millisecondsEl = document.getElementById("milliseconds");
+const ampmEl = document.getElementById("ampm");
 
 function updateClock() {
 
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     //! The new Date().getHours(), new Date().getMinutes(), and new Date().getSeconds() 
     //! methods return the current hour, minute, and second, respectively.
-    let d = new Date().getDate()
-    let mo = new Date().getMonth()
-    let y = new Date().getFullYear()
-    let h = new Date().getHours()
-    let m = new Date().getMinutes()
-    let s = new Date().getSeconds()
-    let ms = new Date().getMilliseconds()
-    
-    let ampm = "AM"
+    let d = new Date().getDate();
+    let mo = new Date().getMonth() + 1;
+    let mn = monthNames[mo - 1];
+    let y = new Date().getFullYear();
+    let h = new Date().getHours();
+    let m = new Date().getMinutes();
+    let s = new Date().getSeconds();
+    let ms = new Date().getMilliseconds();
+    let ampm = "AM";
   
     if (h > 12) {
         h = h - 12
@@ -34,7 +35,7 @@ function updateClock() {
     ms = ms < 10 ? "0" + ms : ms;
 
     dateEl.innerText = d;
-    monthEl.innerText = mo;
+    monthEl.innerText = mn;
     yearEl.innerText = y;
     hoursEl.innerText = h;
     minutesEl.innerText = m;
@@ -47,5 +48,4 @@ function updateClock() {
         updateClock()
     }, 1)
 }
-
 updateClock()
