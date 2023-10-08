@@ -1,8 +1,3 @@
-<?php
-
-date_default_timezone_set("Asia/Calcutta");  
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +13,20 @@ date_default_timezone_set("Asia/Calcutta");
     <h2>Digital Clock</h2>
     <div class="clock">
         <div>
+            <span id="date">00</span>
+            <span class="text">Date</span>
+        </div>
+        <div>
+            <span id="month">00</span>
+            <span class="text">Month</span>
+        </div>
+        <div>
+            <span id="year">00</span>
+            <span class="text">Year</span>
+        </div>
+    </div>
+    <div class="clock">
+        <div>
             <span id="hours">00</span>
             <span class="text">Hours</span>
         </div>
@@ -28,6 +37,10 @@ date_default_timezone_set("Asia/Calcutta");
         <div>
             <span id="seconds">00</span>
             <span class="text">Seconds</span>
+        </div>
+        <div>
+            <span id="milliseconds">00</span>
+            <span class="text">MilliSeconds</span>
         </div>
         <div>
             <span id="ampm">AM</span>
